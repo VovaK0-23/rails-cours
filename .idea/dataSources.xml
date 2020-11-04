@@ -7,13 +7,15 @@
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/rails_cours_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/rails_cours_development</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails rails-cours: test" uuid="083baf42-09ae-4658-bc15-6f072fcc9161">
+    <data-source source="LOCAL" name="Rails rails-cours: test" uuid="89f1343c-7e63-48c7-b41a-d4a689184ab0">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/rails_cours_test</jdbc-url>
     </data-source>
   </component>
 </project>
