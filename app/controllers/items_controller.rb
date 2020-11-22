@@ -23,11 +23,21 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+
+  end
 
   def update; end
 
-  def destroy; end
+  def destroy
+    item = Item.where(id: params[:id]).first.destroy
+
+    if item.destroyed?
+      redirect_to items_path
+    else
+      render json: item.errors, status: :unprocessable_entity
+    end
+  end
 
   private
   def items_params
