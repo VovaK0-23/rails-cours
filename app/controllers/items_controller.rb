@@ -5,7 +5,11 @@ class ItemsController < ApplicationController
   after_action  :show_info, only: %i[index]
 
   def index
-    @items = Item.all
+    @items = Item
+    @items = @items.where('price >= ?', params[:price_from])       if params[:price_from]
+    @items = @items.where('created_at >= ?', 1.day.ago)            if params[:today]
+    @items = @items.where('votes_count >= ?', params[:votes_from]) if params[:votes_from]
+    @items = @items.order(:id)
   end
 
   def create
@@ -51,7 +55,7 @@ class ItemsController < ApplicationController
 
   private
   def items_params
-    params.permit(:name, :price, :real, :weight, :description)
+    params.permit(:name, :price, :description)
   end
   def find_item
     @item = Item.where(id: params[:id]).first

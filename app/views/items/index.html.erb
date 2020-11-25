@@ -1,6 +1,6 @@
 <h2 style="color: #B00100; margin: 0 auto">all items</h2> <br/>
 <% if @items.empty? %>
-  <h3 style="color: red; margin: 0 auto">no items</h3>
+  <h3 style="color: #B00100; margin: 0 auto">no items</h3>
   <%= button_to 'new item', new_item_path, method: :get %>
 <% else %>
 
@@ -13,7 +13,7 @@
       <th>Rating</th>
       <th>Delete</th>
     </tr>
-    <% @items.sort.each do |item| %>
+    <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td>
         <td><%= link_to item.name, item_path(item) %></td>
