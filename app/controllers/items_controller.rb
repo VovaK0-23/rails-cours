@@ -10,9 +10,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    item = Item.create(items_params)
+    @item = Item.create(items_params)
 
-    if item.persisted?
+    if @item.persisted?
       flash[:success] = 'Item was saved'
       redirect_to items_path
     else
@@ -21,7 +21,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def new; end
+  def new
+    @item = Item.new
+  end
   #
   # def show; end
   #
@@ -59,8 +61,9 @@ class ItemsController < ApplicationController
 
   private
   def items_params
-    params.permit(:name, :price, :description)
+    params.require(:item).permit(:name, :price, :description)
   end
+
   def find_item
     @item = Item.where(id: params[:id]).first
     render_404 unless @item

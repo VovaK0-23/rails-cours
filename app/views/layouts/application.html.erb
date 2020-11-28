@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsCours</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RailsCours</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag asset_path('4.jpeg') %>
+</head>
 
-  <body>
-  <h2 style="color: #B00100;">User Panel</h2>
-  <p style="color: #B00100"><%= flash[:error] %></p>
-  <p style="color: darkgreen"><%= flash[:success] %></p>
-  <%= yield %>
-  </body>
+<body>
+
+<h2 style="color: #B00100;">User Panel</h2>
+<p style="color: #B00100"><%= flash[:error] %></p>
+<p style="color: darkgreen"><%= flash[:success] %></p>
+<%= yield %>
+
+</body>
 </html>
