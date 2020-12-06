@@ -3,11 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+gem 'activerecord-session_store'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.7'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'pry-rails'
 gem 'puma', '~> 4.1'
